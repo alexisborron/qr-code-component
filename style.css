@@ -1,0 +1,108 @@
+:root {
+  /* Colors */
+  --color-page: hsl(212, 45%, 89%);
+  --color-surface: hsl(0, 0%, 100%);
+  --color-heading: hsl(218, 44%, 22%);
+  --color-text: hsl(220, 15%, 45%);
+
+  /* Typography */
+  --font-sans: "Outfit", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --fs-title: 1.375rem; /* 22px */
+  --fs-body: 0.9375rem; /* 15px */
+
+  /* Spacing & shape */
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --radius-card: 1.25rem; /* 20px */
+  --radius-image: 0.625rem; /* 10px */
+  --card-width: 20rem; /* 320px */
+  --shadow-card: 0 25px 25px hsl(0 0% 0% / 0.0477);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-page);
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  padding: var(--space-md);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  width: 100%;
+  max-width: var(--card-width);
+  padding: var(--space-sm) var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-card);
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-card);
+  text-align: center;
+}
+
+.card__qr {
+  width: 100%;
+  border-radius: var(--radius-image);
+}
+
+.card__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  padding-inline: var(--space-sm);
+}
+
+.card__title {
+  color: var(--color-heading);
+  font-size: var(--fs-title);
+  font-weight: 700;
+  line-height: 1.25;
+  text-wrap: balance;
+}
+
+.card__text {
+  color: var(--color-text);
+  font-size: var(--fs-body);
+  text-wrap: pretty;
+}
+
+.attribution {
+  padding: var(--space-sm);
+  color: var(--color-heading);
+  font-size: 0.6875rem;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(216, 95%, 58%);
+  border-radius: 2px;
+}
+
+.attribution a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
